@@ -23,6 +23,8 @@
 
 Projeto de applicativo NodeJS simples, o qual tem como objetivo servir como forma de aprendizado e aperfeiçoamento do uso do Typescript em ambiente NodeJS, desenvolvido como trabalho prático ao longo do Bootcamp Online - Desenvolvedor Full Stack da [IGTI](https://www.igti.com.br/).
 
+Faz a leitura de dados de cidades brasileiras e de estados, e retorna uma análise de dados correspondente a cada tipo de requisição apresentada em CLI.
+
 ## :speech_balloon: Como Usar
 
 Para usar esta aplicação, primeiramente instale as dependências com seu gerenciador de pacotes: `npm install` or `yarn install`.
@@ -60,6 +62,8 @@ Agora, apenas siga as instruções em sua CLI. Infelizmente, instruções apenas
 ## :bookmark: About
 
 Simple application project, which aims to serve as a way of learning and improving the use of Typescript in NodeJS environment, developed as practical work throughout Bootcamp Online - Full Stack Developer at [IGTI](https://www.igti.com.br/).
+
+Reads data from Brazilian cities and states, and returns a data analysis corresponding to each type of request presented in CLI.
 
 ## :speech_balloon: How to run it
 
