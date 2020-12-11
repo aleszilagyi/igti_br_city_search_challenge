@@ -18,7 +18,7 @@ const compareAndGetDescending = async (arr: Array<TotalCities>) => {
 
 const setDataToArray = async (file: Array<Cities>) => {
   const result = await Promise.all(
-    file.map((city) => ({
+    file.map(city => ({
       name: city.Nome,
       amount: city.Nome.length,
       state: city.Estado,
@@ -52,10 +52,10 @@ export const getMoreOrLessAmountUf = async (option: number) => {
   const ufPath = await getPath('TotalCount.json', 'src', 'db', 'ufs');
   const arrToSort: Array<TotalCities> = await readFile(ufPath);
   const sortedArr = await compareAndGetDescending(arrToSort);
-  const result = option === 0
-    ? await getFirstFiveElements(sortedArr)
-    : await getLastFiveElements(sortedArr);
-
+  const result =
+    option === 0
+      ? await getFirstFiveElements(sortedArr)
+      : await getLastFiveElements(sortedArr);
   const stringToConsole = `1: ${result[0].name} - ${result[0].amount} cidades
 2: ${result[1].name} - ${result[1].amount} cidades
 3: ${result[2].name} - ${result[2].amount} cidades
