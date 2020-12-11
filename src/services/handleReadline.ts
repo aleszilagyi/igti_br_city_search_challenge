@@ -85,7 +85,7 @@ const cli = (cities: string) => {
   const exitOrMenu = async (callback: CallableFunction) => {
     rl.question(`${lineMsgs.getBackOrExit}`, async (answer) => {
       if (answer === '1') {
-        cli();
+        cli(cities);
       } else if (answer === '6') {
         console.log(lineMsgs.goodBye);
         rl.close();

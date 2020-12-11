@@ -35,33 +35,40 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
+var createDir_1 = __importDefault(require("./services/createDir"));
 var handleFiles_1 = require("./services/handleFiles");
+var handleReadline_1 = __importDefault(require("./services/handleReadline"));
 var statesFileName = 'Estados.json';
 var citiesFileName = 'Cidades.json';
 process.on('unhandledRejection', function (reason, p) {
     throw reason;
 });
 var main = function () { return __awaiter(void 0, void 0, void 0, function () {
-    var cities, _a, ufs, _b;
-    return __generator(this, function (_c) {
-        switch (_c.label) {
-            case 0:
-                _a = handleFiles_1.readFile;
-                return [4 /*yield*/, handleFiles_1.getPath(citiesFileName, 'src', 'db', 'cidades-estados-brasil-json')];
-            case 1: return [4 /*yield*/, _a.apply(void 0, [_c.sent()])];
-            case 2:
-                cities = _c.sent();
-                _b = handleFiles_1.readFile;
+    var cities, ufs;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0: return [4 /*yield*/, handleFiles_1.getPath(citiesFileName, 'src', 'db', 'cidades-estados-brasil-json')];
+            case 1:
+                cities = _a.sent();
                 return [4 /*yield*/, handleFiles_1.getPath(statesFileName, 'src', 'db', 'cidades-estados-brasil-json')];
-            case 3: return [4 /*yield*/, _b.apply(void 0, [_c.sent()])];
-            case 4:
-                ufs = _c.sent();
-                // await createUfDbDir();
+            case 2:
+                ufs = _a.sent();
+                return [4 /*yield*/, createDir_1.default()];
+            case 3:
+                _a.sent();
                 return [4 /*yield*/, handleFiles_1.dataToFiles(cities, ufs)];
+            case 4:
+                _a.sent();
+                return [4 /*yield*/, handleFiles_1.createArrCitiesUf(ufs)];
             case 5:
-                // await createUfDbDir();
-                _c.sent();
+                _a.sent();
+                return [4 /*yield*/, handleReadline_1.default(cities)];
+            case 6:
+                _a.sent();
                 return [2 /*return*/];
         }
     });
